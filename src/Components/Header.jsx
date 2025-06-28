@@ -1,12 +1,5 @@
-import { useMemo} from "react" //useMemo es un hook para limpiar el codigo eliminando () de los state derivados, ya que no es necesario llamarlos 
+function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal}) {
 
-
-function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart}) {
-
-    //state derivado
-    const isEmpty = useMemo(() => cart.length === 0, [cart])
-    const cartTotal = useMemo(() => cart.reduce ((total, item) => total + (item.quantity * item.price), 0), [cart])//formar de calcular el total de la compra
-    
     return (
         <>
         <header className="py-5 header">
